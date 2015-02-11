@@ -43,11 +43,85 @@
 			<div class="slides">
 				<section>
 					<h1>Blindfolded Cartography</h1>
+					<p><small>Andy Woodruff, Axis Maps<br><br>OpenVis Conference, April 2015</small></p>
+				</section>
+
+				<section data-background="images/boston.png">
+					<p>Hello, my name is Andy. I make maps.</p>
+					<p class="left">I live on the other (better, duh) side of the river and sometimes <a href="http://bostonography.com/" target="_blank">make maps of Boston</a>.</p>
+					<p class="left">I also learn things and help other people learn things at <a href="http://maptimeboston.github.io" target="_blank">Maptime Boston</a>.</p>
+				</section>
+
+				<section>
+					<p>But most of the time, <br>I make interactive web maps with <a href="http://axismaps.com" target="_blank">Axis Maps</a>.</p>
+					<p class="fragment">For public health, historians, educators, environmentalists, researchers, economists, businesses, &amp;c. &amp;c.</p>
+				</section>
+
+				<section>
+					<h1>The human touch</h1>
 				</section>
 
 				<section>
 					<blockquote>&ldquo;The machine does not desire to make you think or feel or learn anything in particular, as the artist does, and this is the heart of what is wrong with so much of cartography today. Only humans can make maps for other humans.&rdquo;</blockquote>
 					<p>Daniel Huffman, <a href="https://somethingaboutmaps.wordpress.com/2011/04/20/on-human-cartography/" target="_blank">On Human Cartography</a></p>
+				</section>
+
+				<section>
+					<p><a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><em>The Essential Geography of the United States of America</em></a></p>
+					<p>by David Imus</p>
+					<a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><img src="images/imus2.jpg"/></a>
+				</section>
+
+				<section>
+					<a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><img src="images/imus.jpg"/></a>
+					<p><q>&ldquo;He used a computer (not a pencil and paper), but absolutely nothing was left to computer-assisted happenstance.&rdquo;</q></p>
+					<small><a href="http://www.slate.com/articles/arts/culturebox/2012/01/the_best_american_wall_map_david_imus_the_essential_geography_of_the_united_states_of_america_.html" target="_blank">-Seth Stevenson, Slate (2012)</a></small></p>
+				</section>
+
+				<section>
+					<p>1:4,000,000 scale</p>
+					<p>&ldquo;Nearly 6,000 hours&rdquo; of work</p>
+				</section>
+
+				<section>
+					<h2>Some approximate math</h2>
+					<p>Suppose he wanted to make a multiscale web map with the same level of care...</p>
+				</section>
+
+				<section>
+					<p class="left"><small>
+						<span class="fragment" data-fragment-index="1">Zoom level 0: <strong>47 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="1">Zoom level 1: <strong>94 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="1">Zoom level 2: <strong>188 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="1">Zoom level 3: <strong>375 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="1">Zoom level 4: <strong>750 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="1">Zoom level 5: <strong>1,500 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="1">Zoom level 6: <strong>3,000 hours</strong></span><br>
+						<span>Zoom level 7: <strong>6,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 8: <strong>12,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 9: <strong>24,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 10: <strong>48,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 11: <strong>96,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 12: <strong>192,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 13: <strong>384,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 14: <strong>768,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 15: <strong>1,536,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 16: <strong>3,072,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 17: <strong>6,144,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="2">Zoom level 18: <strong>12,288,000 hours</strong></span>
+						<br><br>
+						<span class="fragment" data-fragnent-index="3">*Conservatively doubling instead of quadrupling hours with each zoom level.</span>
+					</small></p>
+				</section>
+
+				<section>
+					<h2>2,803 years</h2>
+					<h2 class="fragment">(and 222 days)</h2>
+					<p class="fragment">And that's only the United States.</p>
+				</section>
+
+				<section>
+					<h1>Big design</h1>
 				</section>
 			</div>
 
@@ -66,7 +140,7 @@
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
