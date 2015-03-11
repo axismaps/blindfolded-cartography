@@ -16,6 +16,7 @@
 
 		<style>
 			.reveal .slides .left{ text-align: left; }
+			.reveal section img{ background: transparent; border: none; box-shadow: none}
 		</style>
 
 		<!-- Code syntax highlighting -->
@@ -54,9 +55,88 @@
 
 				<section>
 					<p>But most of the time, <br>I make interactive web maps with <a href="http://axismaps.com" target="_blank">Axis Maps</a>.</p>
-					<p class="fragment">For public health, historians, educators, environmentalists, researchers, economists, businesses, &amp;c. &amp;c.</p>
+					<p class="fragment" data-fragment-index="0">For public health, historians, educators, environmentalists, researchers, economists, businesses, &amp;c. &amp;c.</p>
+					<img class="fragment" data-fragment-index="0" data-src="images/portfolio.png"/>
 				</section>
 
+				<section>
+					<h1>Data classification</h1>
+				</section>
+
+				<section>
+					<p>Data distributions in designs</p>
+					<img data-src="images/ideal_histo.png" style="background:transparent; border:none; box-shadow:none"/>
+					<p class="fragment" data-fragment-index="1">Data distributions in reality</p>
+					<img class="fragment" data-fragment-index="1" data-src="images/real_histo.png" style="background:transparent; border:none; box-shadow:none"/>
+					<p class="fragment" data-fragment-index="2">Every. Damn. Time.</p>
+				</section>
+
+				<section>
+					<h2>Jenks Optimal Breaks</h2>
+					<p class="left">Developed by George Jenks in 1977</p>
+					<p class="left fragment">Maximizes similarity <em>within</em> groups<br>and difference <em>between</em> groups</p>
+					<p class="left fragment">See Tom MacWright's <a href="http://www.macwright.org/2013/02/18/literate-jenks.html" target="_blank">JavaScript implementation</a></p>
+					<p class="left fragment">Downside: unique to every data distribution. Difficult to make comparisons across different datasets.</p>
+				</section>
+
+				<section>
+					<img data-src="images/jenks_histo.png"/>
+				</section>
+
+				<section>
+					<h2>Quantile Breaks</h2>
+					<p class="left">Same number of items in each class</p>
+					<p class="left fragment">Guarantees some variety on the map</p>
+					<p class="left fragment">Prevents crazy skews from ruining everything</p>
+					<p class="left fragment">Downside: obfuscates magnitudes. Sometimes crazy skews and outliers are meaningful.</p>
+				</section>
+
+				<section>
+					<img data-src="images/quantile_histo.png"/>
+				</section>
+
+				<section>
+					<h1>Density</h1>
+				</section>
+
+				<section>
+					<h2>Geography is messy and crowded</h2>
+				</section>
+
+				<section>
+					<p class="left"><strong>Things overlap.</strong><br/>Make sure small things are on top of large things.</p>
+					<p class="left"><strong>Some things are large and some things are small.</strong><br/>Zooming?</p>
+				</section>
+
+				<section>
+					<h1 style="text-transform:none"><code>null</code></h1>
+				</section>
+
+				<section>
+					<h2>Expect holes in the data</h2>
+					<p>Design for them and catch them in code. "No data" is data.</p>
+				</section>
+				
+				<section>
+					<p>See <a href="https://www.youtube.com/watch?v=JqzAuqNPYVM" target="_blank">The Design of Nothing: Null, Zero, Blank</a></p>
+					<p>Andy Kirk, OpenVis 2014</p>
+					<iframe width="560" height="315" data-src="https://www.youtube.com/embed/JqzAuqNPYVM" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<p>be explicit about design rules for no data. default looks are ugly - often solid black. ensure a difference between 0 and null.</p>
+				</section>
+
+				<section>
+					<p>Gaps in time series data</p>
+					<img data-src="images/ios_health.png"/>
+				</section>
+
+				<section>
+					<p>Gaps in time series data</p>
+					<img data-src="images/jlia_stLouis.jpg"/>
+				</section>
+				
 				<section>
 					<h1>The human touch</h1>
 				</section>
@@ -69,18 +149,13 @@
 				<section>
 					<p><a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><em>The Essential Geography of the United States of America</em></a></p>
 					<p>by David Imus</p>
-					<a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><img src="images/imus2.jpg"/></a>
+					<a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><img data-src="images/imus2.jpg"/></a>
 				</section>
 
 				<section>
-					<a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><img src="images/imus.jpg"/></a>
+					<a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><img data-src="images/imus.jpg"/></a>
 					<p><q>&ldquo;He used a computer (not a pencil and paper), but absolutely nothing was left to computer-assisted happenstance.&rdquo;</q></p>
 					<small><a href="http://www.slate.com/articles/arts/culturebox/2012/01/the_best_american_wall_map_david_imus_the_essential_geography_of_the_united_states_of_america_.html" target="_blank">-Seth Stevenson, Slate (2012)</a></small></p>
-				</section>
-
-				<section>
-					<p>1:4,000,000 scale</p>
-					<p>&ldquo;Nearly 6,000 hours&rdquo; of work</p>
 				</section>
 
 				<section>
@@ -89,6 +164,8 @@
 				</section>
 
 				<section>
+					<p class="left">1:4,000,000 scale<br/>
+					&ldquo;Nearly 6,000 hours&rdquo; of work</p>
 					<p class="left"><small>
 						<span class="fragment" data-fragment-index="1">Zoom level 0: <strong>47 hours</strong></span><br>
 						<span class="fragment" data-fragment-index="1">Zoom level 1: <strong>94 hours</strong></span><br>
@@ -97,7 +174,7 @@
 						<span class="fragment" data-fragment-index="1">Zoom level 4: <strong>750 hours</strong></span><br>
 						<span class="fragment" data-fragment-index="1">Zoom level 5: <strong>1,500 hours</strong></span><br>
 						<span class="fragment" data-fragment-index="1">Zoom level 6: <strong>3,000 hours</strong></span><br>
-						<span>Zoom level 7: <strong>6,000 hours</strong></span><br>
+						<span class="fragment" data-fragment-index="0">Zoom level 7: <strong>6,000 hours</strong></span><br>
 						<span class="fragment" data-fragment-index="2">Zoom level 8: <strong>12,000 hours</strong></span><br>
 						<span class="fragment" data-fragment-index="2">Zoom level 9: <strong>24,000 hours</strong></span><br>
 						<span class="fragment" data-fragment-index="2">Zoom level 10: <strong>48,000 hours</strong></span><br>
@@ -122,6 +199,28 @@
 
 				<section>
 					<h1>Big design</h1>
+				</section>
+
+				<section>
+					<h2>"Big data" is a design problem</h2>
+					<p class="fragment">How can we accomplish good, <em>human</em> design when visualizing far more data than a human could ever inspect?</p>
+				</section>
+
+				<section>
+					<p>A common problem in open mapping (ie OSM). Gazillions of tiles or whatever, with data of varying character and quality.</p>
+				</section>
+
+				<section>
+					<p>I can do no better than to quote Nicki Dlugash of Mapbox in her <a href="http://nickidlugash.com/designing-global-basemaps.pdf" target="_blank">talk from NACIS 2014</a>:</p>
+					<ol>
+						<li class="fragment">Prioritize areas you care about for your specific use case.</li>
+						<li class="fragment">Prioritize the most typical or common examples of a feature.</li>
+						<li class="fragment">Look for the most atypical examples of a feature to develop a good compromise.</li>
+					</ol>
+				</section>
+
+				<section>
+					<img data-src="images/mapbox_studio.jpg"/>
 				</section>
 			</div>
 
