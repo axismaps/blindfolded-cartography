@@ -69,47 +69,47 @@
 				</section>
 
 				<section>
-					<p>Data distributions in designs</p>
-					<img data-src="images/ideal_histo.png" style="background:transparent; border:none; box-shadow:none"/>
-					<p class="fragment" data-fragment-index="1">Data distributions in reality</p>
-					<img class="fragment" data-fragment-index="1" data-src="images/real_histo.png" style="background:transparent; border:none; box-shadow:none"/>
-					<p class="fragment" data-fragment-index="2">Every. Damn. Time.</p>
-				</section>
-
-				<section>
 					<p>Classification matters. A lot.</p>
 					<img data-src="images/MultipleClassificationsSkewed.jpg"/>
 					<p><small><a href="http://uxblog.idvsolutions.com/2011/10/telling-truth.html" target="_blank">John Nelson, <em>Telling the Truth</em></a></small></p>
 				</section>
 
 				<section>
-					<h2>Jenks Optimal Breaks</h2>
-					<p class="left">Developed by George Jenks in 1977</p>
-					<p class="left fragment">Maximizes similarity <em>within</em> groups<br>and difference <em>between</em> groups</p>
-					<p class="left fragment">See Tom MacWright's <a href="http://www.macwright.org/2013/02/18/literate-jenks.html" target="_blank">JavaScript implementation</a></p>
-					<p class="left fragment">BUT breaks will be ugly numbers unique to every data distribution. Difficult to make comparisons between datasets.</p>
+					<p>Data distributions in designs</p>
+					<img data-src="images/ideal_histo2.png" style="background:transparent; border:none; box-shadow:none"/>
+					<p class="fragment" data-fragment-index="1">Data distributions in reality</p>
+					<img class="fragment" data-fragment-index="1" data-src="images/real_histo2.png" style="background:transparent; border:none; box-shadow:none"/>
+					<p class="fragment" data-fragment-index="2">Every. Damn. Time.</p>
 				</section>
 
 				<section>
-					<img data-src="images/jenks_histo.png"/>
+					<h2>Jenks Optimal Breaks</h2>
+					<p class="left">Developed by George Jenks in 1977.</p>
+					<p class="left fragment">Maximizes similarity <em>within</em> groups<br>and difference <em>between</em> groups.</p>
+					<p class="left fragment">See Tom MacWright's <a href="http://www.macwright.org/2013/02/18/literate-jenks.html" target="_blank">JavaScript implementation</a>.</p>
+					<p class="left fragment">BUT breaks will be weird numbers unique to every distribution. Difficult to make comparisons between datasets.</p>
+				</section>
+
+				<section>
+					<img data-src="images/jenks_histo2.png"/>
 				</section>
 
 				<section>
 					<h2>Quantile Breaks</h2>
-					<p class="left">Same number of items in each class</p>
-					<p class="left fragment">Guarantees some variety on the map</p>
-					<p class="left fragment">Prevents crazy skews from ruining everything</p>
+					<p class="left">Same number of items in each class. Easy to understand.</p>
+					<p class="left fragment">Guarantees some variety on the map.</p>
+					<p class="left fragment">Prevents crazy skews from ruining everything.</p>
 					<p class="left fragment">BUT quantiles obfuscate magnitudes. Sometimes crazy skews and outliers are meaningful.</p>
 				</section>
 
 				<section>
-					<img data-src="images/quantile_histo.png"/>
+					<img data-src="images/quantile_histo2.png"/>
 				</section>
 
 				<section>
 					<h2>A compromise</h2>
 					<p class="left">Breaks at unevenly spaced percentiles, while still masking actual magnitudes, can keep skews under control but highlight low and/or high ends. As a bonus, labels can always be pretty numbers.</p>
-					<img data-src="images/idph_histo.jpg"/>
+					<img data-src="images/compromise_histo.png"/>
 				</section>
 
 				<section>
