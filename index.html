@@ -108,7 +108,7 @@
 
 				<section>
 					<h2>A compromise</h2>
-					<p class="left">Breaks at unevenly spaced percentiles, although still masking actual magnitudes, can keep skews under control while highlighting low and/or high ends. Plus labels can always be pretty numbers.</p>
+					<p class="left">Breaks at unevenly spaced percentiles, while still masking actual magnitudes, can keep skews under control but highlight low and/or high ends. As a bonus, labels can always be pretty numbers.</p>
 					<img data-src="images/idph_histo.jpg"/>
 				</section>
 
@@ -167,11 +167,33 @@
 				</section>
 
 				<section>
+					<h1>Text</h1>
+				</section>
+
+				<section>
+					<p>Mind your number formatting</p>
+					<img data-src="images/text_plural.jpg"/>
+				</section>
+
+				<section>
+					<p class="left">For example:</p>
+<pre><code>function format(val){
+  return val + " seat" + ( val != 1 ? "s" : "" );
+}</code></pre>
+<pre><code>function format(val){
+  if ( val > 1000000000 ) return val / 1000000000 + " billion";
+  if ( val > 1000000 ) return val / 1000000 + " million";
+  if ( val > 1000 ) return val / 1000 + " thousand";
+  return val;
+}</code></pre>
+				</section>
+
+				<section>
 					<h1>The Lorem Ipsum Map</h1>
 				</section>
 
 				<section>
-					<h2>Real—or even realistic—data is not always available to designers and developers.</h2>
+					<h2>Real — or even <em>realistic</em> — data is not always available to designers and developers.</h2>
 				</section>
 
 				<section>
@@ -249,7 +271,7 @@
 
 				<section>
 					<h2>"Big data" is a design problem</h2>
-					<p class="fragment">How can we accomplish good, <em>human</em> design when visualizing far more data than a human could ever inspect?</p>
+					<p class="fragment">How can we accomplish good, <em>human</em> design when visualizing far more data than a human designer could ever inspect?</p>
 				</section>
 
 				<section>
