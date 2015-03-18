@@ -60,6 +60,11 @@
 				</section>
 
 				<section>
+					<p class="left">We are often tasked with designing and building interactive maps for data that we can't yet see.</p>
+					<img data-src="images/napkin.jpg"/>
+				</section>
+
+				<section>
 					<h1>Data classification</h1>
 				</section>
 
@@ -72,11 +77,17 @@
 				</section>
 
 				<section>
+					<p>Classification matters. A lot.</p>
+					<img data-src="images/MultipleClassificationsSkewed.jpg"/>
+					<p><small><a href="http://uxblog.idvsolutions.com/2011/10/telling-truth.html" target="_blank">John Nelson, <em>Telling the Truth</em></a></small></p>
+				</section>
+
+				<section>
 					<h2>Jenks Optimal Breaks</h2>
 					<p class="left">Developed by George Jenks in 1977</p>
 					<p class="left fragment">Maximizes similarity <em>within</em> groups<br>and difference <em>between</em> groups</p>
 					<p class="left fragment">See Tom MacWright's <a href="http://www.macwright.org/2013/02/18/literate-jenks.html" target="_blank">JavaScript implementation</a></p>
-					<p class="left fragment">Downside: unique to every data distribution. Difficult to make comparisons across different datasets.</p>
+					<p class="left fragment">BUT breaks will be ugly numbers unique to every data distribution. Difficult to make comparisons between datasets.</p>
 				</section>
 
 				<section>
@@ -88,11 +99,17 @@
 					<p class="left">Same number of items in each class</p>
 					<p class="left fragment">Guarantees some variety on the map</p>
 					<p class="left fragment">Prevents crazy skews from ruining everything</p>
-					<p class="left fragment">Downside: obfuscates magnitudes. Sometimes crazy skews and outliers are meaningful.</p>
+					<p class="left fragment">BUT quantiles obfuscate magnitudes. Sometimes crazy skews and outliers are meaningful.</p>
 				</section>
 
 				<section>
 					<img data-src="images/quantile_histo.png"/>
+				</section>
+
+				<section>
+					<h2>A compromise</h2>
+					<p class="left">Breaks at unevenly spaced percentiles, although still masking actual magnitudes, can keep skews under control while highlighting low and/or high ends. Plus labels can always be pretty numbers.</p>
+					<img data-src="images/idph_histo.jpg"/>
 				</section>
 
 				<section>
@@ -104,8 +121,20 @@
 				</section>
 
 				<section>
-					<p class="left"><strong>Things overlap.</strong><br/>Make sure small things are on top of large things.</p>
-					<p class="left"><strong>Some things are large and some things are small.</strong><br/>Zooming?</p>
+					<h3 class="left">Things overlap</h3>
+					<p class="left">Make sure small things are on top of large things.</p>
+					<pre><code>function drawMapForMonth(m){
+  var circle = map.selectAll("circle")
+    .sort(function(a,b){
+      return Math.abs(b[m]) - Math.abs(a[m]);
+    })
+  // etc
+}</code></pre>
+				</section>
+				<section>
+					<h3 class="left">Some things are large and some are small.</h3>
+					<p class="left">Multiple scales can be supported in controlled ways (?)</p>
+					<img src="images/idph_cook.jpg"/>
 				</section>
 
 				<section>
@@ -136,6 +165,23 @@
 					<p>Gaps in time series data</p>
 					<img data-src="images/jlia_stLouis.jpg"/>
 				</section>
+
+				<section>
+					<h1>The Lorem Ipsum Map</h1>
+				</section>
+
+				<section>
+					<h2>Real—or even realistic—data is not always available to designers and developers.</h2>
+				</section>
+
+				<section>
+					<p class="left">Designing UI around a placeholder <em>lorem ipsum map</em> (<a href="http://cartographicperspectives.org/index.php/journal/article/view/cp60-roth-harrower" target="_blank">Roth and Harrower, 2008</a>) can be detrimental to the overall look and feel, and to user experience.</p>
+					<p>(add image?)</p>
+				</section>
+
+				<section>
+					<img data-src="images/lnp.jpg"/>
+				</section>
 				
 				<section>
 					<h1>The human touch</h1>
@@ -155,7 +201,7 @@
 				<section>
 					<a href="http://www.imusgeographics.com/listitems_63/usa-maps" target="_blank"><img data-src="images/imus.jpg"/></a>
 					<p><q>&ldquo;He used a computer (not a pencil and paper), but absolutely nothing was left to computer-assisted happenstance.&rdquo;</q></p>
-					<small><a href="http://www.slate.com/articles/arts/culturebox/2012/01/the_best_american_wall_map_david_imus_the_essential_geography_of_the_united_states_of_america_.html" target="_blank">-Seth Stevenson, Slate (2012)</a></small></p>
+					<p><small><a href="http://www.slate.com/articles/arts/culturebox/2012/01/the_best_american_wall_map_david_imus_the_essential_geography_of_the_united_states_of_america_.html" target="_blank">-Seth Stevenson, Slate (2012)</a></small></p>
 				</section>
 
 				<section>
