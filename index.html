@@ -65,6 +65,10 @@
 				</section>
 
 				<section>
+					<p>(Here I need some good summary of the problem)</p>
+				</section>
+
+				<section>
 					<h1>Data classification</h1>
 				</section>
 
@@ -112,7 +116,7 @@
 					<p class="left">Same number of items in each class. Easy to understand.</p>
 					<p class="left fragment">Guarantees some variety on the map.</p>
 					<p class="left fragment">Prevents crazy skews from ruining everything.</p>
-					<p class="left fragment">BUT quantiles obfuscate magnitudes. Sometimes crazy skews and outliers are meaningful.</p>
+					<p class="left fragment">BUT quantiles obfuscate magnitudes and can excessively split similar numbers or group disparate numbers.</p>
 				</section>
 
 				<section>
@@ -165,7 +169,7 @@ getValueAtPercentile( uniques, .25 ); //  = 5</code></pre>
 				</section>
 				<section>
 					<h3 class="left">Some things are large and some are small.</h3>
-					<p class="left">Multiple scales can be supported in controlled ways (?)</p>
+					<p class="left">(something about smoothly supporting multiple scales)</p>
 					<img src="images/idph_cook.jpg"/>
 				</section>
 
@@ -185,7 +189,7 @@ getValueAtPercentile( uniques, .25 ); //  = 5</code></pre>
 				</section>
 
 				<section>
-					<p>be explicit about design rules for no data. default looks are ugly - often solid black. ensure a difference between 0 and null.</p>
+					<p>(be explicit about design rules for no data. default looks are ugly - often solid black. ensure a difference between 0 and null. textures... textures.js)</p>
 				</section>
 
 				<section>
@@ -204,7 +208,8 @@ getValueAtPercentile( uniques, .25 ); //  = 5</code></pre>
 
 				<section>
 					<p>Mind your number formatting</p>
-					<img data-src="images/text_plural.jpg"/>
+					<img style="display:inline-block" data-src="images/text_plural.jpg"/>
+					<img style="display:inline-block" data-src="images/thousands_labels.png"/>
 				</section>
 
 				<section>
