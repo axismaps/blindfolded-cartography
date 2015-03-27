@@ -65,7 +65,7 @@
 				</section>
 
 				<section>
-					<p>(Here I need some good summary of the problem)</p>
+					<p>Crafting beautiful, effective maps and telling stories with them is one thing when you can obssess over every detail; it's quite another when you have to do it as though blindfolded.</p>
 				</section>
 
 				<section>
@@ -101,9 +101,8 @@
 
 				<section>
 					<h2>Jenks Optimal Breaks</h2>
-					<p class="left">Developed by George Jenks in 1977.</p>
 					<p class="left fragment">Maximizes similarity <em>within</em> groups<br>and difference <em>between</em> groups.</p>
-					<p class="left fragment">For an example implementation,<br>see <a href="http://www.macwright.org/2013/02/18/literate-jenks.html" target="_blank">Tom MacWright's in JavaScript</a>.</p>
+					<p class="left fragment">See: <a href="http://www.macwright.org/2013/02/18/literate-jenks.html" target="_blank">Tom MacWright's JavaScript implementation</a>.</p>
 					<p class="left fragment">BUT breaks will be weird numbers unique to every distribution. Difficult to make comparisons between datasets.</p>
 				</section>
 
@@ -115,7 +114,7 @@
 					<h2>Quantile Breaks</h2>
 					<p class="left">Same number of items in each class. Easy to understand.</p>
 					<p class="left fragment">Guarantees some variety on the map.</p>
-					<p class="left fragment">Prevents crazy skews from ruining everything.</p>
+					<p class="left fragment">See: <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantile-scales">D3 quantile scales</a>.</p>
 					<p class="left fragment">BUT quantiles obfuscate magnitudes and can excessively split similar numbers or group disparate numbers.</p>
 				</section>
 
