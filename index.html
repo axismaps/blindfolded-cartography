@@ -65,7 +65,12 @@
 				</section>
 
 				<section>
-					<p>Crafting beautiful, effective maps and telling stories with them is one thing when you can obssess over every detail; it's quite another when you have to do it as though blindfolded.</p>
+					<p>Traditional cartography allows for perfectionism. Crafting beautiful, effective maps and telling stories with them is one thing when you can obssess over every detail; it's quite another when you have to do it as though blindfolded.</p>
+				</section>
+
+				<section>
+					<h2>A tale of compromises</h2>
+					<p>What follows is a list of such challenges from our experience, be they data messes, design conundrums, or code gotchas. Solutions are never perfect, but they're out there.
 				</section>
 
 				<section>
@@ -112,7 +117,7 @@
 
 				<section>
 					<h2>Quantile Breaks</h2>
-					<p class="left">Same number of items in each class. Easy to understand.</p>
+					<p class="left">Same number of items in each bin.</p>
 					<p class="left fragment">Guarantees some variety on the map.</p>
 					<p class="left fragment">See: <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantile-scales">D3 quantile scales</a>.</p>
 					<p class="left fragment">BUT quantiles obfuscate magnitudes and can excessively split similar numbers or group disparate numbers.</p>
@@ -134,7 +139,7 @@
 
 				<section>
 					<h2>A final trick</h2>
-					<p class="left">Data may be loaded with a ton of duplicate values (often, the number zero) that would span multiple class breaks, so we sometimes calculcate percentiles based on <em>unique</em> values, not all values.</p>
+					<p class="left">Percentiles based on <em>unique</em> values prevent a single value from spanning multiple bins.</p>
 <pre><code>// basic example
 function getValueAtPercentile( data, percentile ){
   return data[ parseInt( (data.length - 1) * percentile ) ];
@@ -167,9 +172,15 @@ getValueAtPercentile( uniques, .25 ); //  = 5</code></pre>
 }</code></pre>
 				</section>
 				<section>
+					<img data-src="images/geog_of_jobs.png"/>
+				</section>
+				<section>
+					<img data-src="images/wntb_chart.png"/>
+				</section>
+				<section>
 					<h3 class="left">Some things are large and some are small.</h3>
-					<p class="left">(something about smoothly supporting multiple scales)</p>
-					<img src="images/idph_cook.jpg"/>
+					<p class="left">Take advantage of known geographies.</p>
+					<img src="images/zoom_to_state.png"/>
 				</section>
 
 				<section>
@@ -185,6 +196,31 @@ getValueAtPercentile( uniques, .25 ); //  = 5</code></pre>
 					<p>See <a href="https://www.youtube.com/watch?v=JqzAuqNPYVM" target="_blank">The Design of Nothing: Null, Zero, Blank</a></p>
 					<p>Andy Kirk, OpenVis 2014</p>
 					<iframe width="560" height="315" data-src="https://www.youtube.com/embed/JqzAuqNPYVM" frameborder="0" allowfullscreen></iframe>
+				</section>
+
+				<section>
+					<h2>Know no data</h2>
+<pre><code>// no data might be...
+null
+undefined
+NaN
+""
+"NULL"
+-9999
+// &c. &c.</code></pre>
+				</section>
+
+				<section>
+<pre><code>// a tempting way to catch "no data" in javascript
+if ( data ){
+  // yay, we have data!
+} 
+
+// but watch out!
+var data = 0; // zero is real data
+if ( data ){
+  // zero won't get us in here :(
+}</code></pre>
 				</section>
 
 				<section>
@@ -311,11 +347,13 @@ getValueAtPercentile( uniques, .25 ); //  = 5</code></pre>
 				</section>
 
 				<section>
-					<p>A common problem in open mapping (ie OSM). Gazillions of tiles or whatever, with data of varying character and quality.</p>
+					<h2>Global basemaps</h2>
+					<p class="left">Unless you're Google, you're probably using OpenStreetMap. With <a href="http://wiki.openstreetmap.org/wiki/Stats" target="_blank">2 million users</a> mapping the world, quality and consistency aren't guaranteed.</p>
+					<p class="left fragment">Your challenge is to come up with design rules that ensure the map looks pretty good everywhere, at all scales.</p>
 				</section>
 
 				<section>
-					<p>I can do no better than to quote Nicki Dlugash of Mapbox in her <a href="http://nickidlugash.com/designing-global-basemaps.pdf" target="_blank">talk from NACIS 2014</a>:</p>
+					<p>To summarize Nicki Dlugash of Mapbox (<a href="http://nickidlugash.com/designing-global-basemaps.pdf" target="_blank">NACIS 2014</a>):</p>
 					<ol>
 						<li class="fragment">Prioritize areas you care about for your specific use case.</li>
 						<li class="fragment">Prioritize the most typical or common examples of a feature.</li>
