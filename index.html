@@ -112,7 +112,7 @@
 
 				<section>
 					<h2>Quantile Breaks</h2>
-					<p class="left">Same number of items in each class. Easy to understand.</p>
+					<p class="left">Same number of items in each bin.</p>
 					<p class="left fragment">Guarantees some variety on the map.</p>
 					<p class="left fragment">See: <a href="https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantile-scales">D3 quantile scales</a>.</p>
 					<p class="left fragment">BUT quantiles obfuscate magnitudes and can excessively split similar numbers or group disparate numbers.</p>
@@ -134,7 +134,7 @@
 
 				<section>
 					<h2>A final trick</h2>
-					<p class="left">Data may be loaded with a ton of duplicate values (often, the number zero) that would span multiple class breaks, so we sometimes calculcate percentiles based on <em>unique</em> values, not all values.</p>
+					<p class="left">Percentiles based on <em>unique</em> values prevent a single value from spanning multiple bins.</p>
 <pre><code>// basic example
 function getValueAtPercentile( data, percentile ){
   return data[ parseInt( (data.length - 1) * percentile ) ];
