@@ -188,6 +188,31 @@ getValueAtPercentile( uniques, .25 ); //  = 5</code></pre>
 				</section>
 
 				<section>
+					<h2>Know no data</h2>
+<pre><code>// no data might be...
+null
+undefined
+NaN
+""
+"NULL"
+-9999
+// &c. &c.</code></pre>
+				</section>
+
+				<section>
+<pre><code>// a tempting way to catch "no data" in javascript
+if ( data ){
+  // yay, we have data!
+} 
+
+// but watch out!
+var data = 0; // zero is real data
+if ( data ){
+  // zero won't get us in here :(
+}</code></pre>
+				</section>
+
+				<section>
 					<p>(be explicit about design rules for no data. default looks are ugly - often solid black. ensure a difference between 0 and null. textures... textures.js)</p>
 				</section>
 
